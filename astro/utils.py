@@ -93,8 +93,8 @@ def load_module(shortname):
     elif shortname.endswith("_"):
         import astro.utils
         import importlib
-        path = Path(f"astro/plugins/{shortname}.py")
-        name = "astro.plugins.{}".format(shortname)
+        path = Path(f"plugins/{shortname}.py")
+        name = "plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -102,8 +102,8 @@ def load_module(shortname):
     else:
         import astro.utils
         import importlib
-        path = Path(f"astro/plugins/{shortname}.py")
-        name = "astro.plugins.{}".format(shortname)
+        path = Path(f"plugins/{shortname}.py")
+        name = "plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.bot = bot
@@ -125,7 +125,7 @@ def load_module(shortname):
         sys.modules["astro.events"] = astro.utils
         spec.loader.exec_module(mod)
         # for imports
-        sys.modules["astro.plugins." + shortname] = mod
+        sys.modules["plugins." + shortname] = mod
         print("Successfully (re)imported " + shortname)
         # support for other third-party plugins
         sys.modules["userbot.utils"] = astro.utils
@@ -397,8 +397,8 @@ def start_assistant(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"astro/plugins/assistant/{shortname}.py")
-        name = "astro.plugins.assistant.{}".format(shortname)
+        path = Path(f"assistant/{shortname}.py")
+        name = "assistant.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -409,8 +409,8 @@ def start_assistant(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"astro/plugins/assistant/{shortname}.py")
-        name = "astro.plugins.assistant.{}".format(shortname)
+        path = Path(f"assistant/{shortname}.py")
+        name = "assistant.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.tgbot = bot.tgbot
@@ -427,8 +427,8 @@ def load_pmbot(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"astro/plugins/assistant/pmbot/{shortname}.py")
-        name = "astro.plugins.assistant.pmbot.{}".format(shortname)
+        path = Path(f"assistant/pmbot/{shortname}.py")
+        name = "assistant.pmbot.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -439,13 +439,13 @@ def load_pmbot(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"astro/plugins/assistant/pmbot/{shortname}.py")
-        name = "astro.plugins.assistant.pmbot.{}".format(shortname)
+        path = Path(f"assistant/pmbot/{shortname}.py")
+        name = "assistant.pmbot.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.tgbot = bot.tgbot
         spec.loader.exec_module(mod)
-        sys.modules["astro.plugins.assistant.pmbot." + shortname] = mod
+        sys.modules["assistant.pmbot." + shortname] = mod
         print("PMBot Has imported " + shortname)
 
         # ASTRO-UB
