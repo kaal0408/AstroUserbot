@@ -1,1 +1,1 @@
-worker: python3 omk.py
+worker: python3 manjeet.py
