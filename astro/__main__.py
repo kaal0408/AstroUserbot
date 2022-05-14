@@ -48,7 +48,7 @@ else:
     else:
         bot.start()
 
-path = 'astro/plugins/*.py'
+path = 'plugins/*.py'
 files = glob.glob(path)
 for name in files:
     with open(name) as f:
@@ -59,7 +59,7 @@ for name in files:
 print("astro has been deployed! ")
 
 print("Setting up TGBot")
-path = "astro/plugins/assistant/*.py"
+path = "assistant/*.py"
 files = glob.glob(path)
 for name in files:
     with open(name) as f:
@@ -68,7 +68,7 @@ for name in files:
         start_assistant(shortname.replace(".py", ""))
 
 if LOAD_MYBOT == "True":
-    path = "astro/plugins/assistant/pmbot/*.py"
+    path = "assistant/pmbot/*.py"
     files = glob.glob(path)
     for name in files:
         with open(name) as f:
