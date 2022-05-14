@@ -1,2 +1,1 @@
-# Meow-X
-This is pyrogram base userbot
+# Zypher-X
