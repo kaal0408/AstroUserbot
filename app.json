@@ -10,6 +10,7 @@
  ],
  "repository": "https://github.com/AstroUB/Astro-UB",
   "website": "https://github.com/loverboyXD",
+  "stack": "container",
   "env": {
    "ENV": {
     "description": "Setting this to ANYTHING will enable heroku.",
