@@ -1,1 +1,1 @@
-worker: python3 manjeet.py
+worker: python3 astro.py
