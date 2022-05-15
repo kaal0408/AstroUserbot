@@ -14,6 +14,7 @@ RUN apt update && apt upgrade -y && apt install --no-install-recommends -y \
         bash \
         curl \
         git \
+        libel1 \
         util-linux \
         libffi-dev \
         libjpeg-dev \
